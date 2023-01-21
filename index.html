@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,14 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="icon" href="img/favicon.ico?v=2">
 </head>
+
 <body class="main-content">
     <header class="container header active" id="home">
         <div class="header-content">
@@ -50,10 +55,13 @@
                     <h4>Information About me</h4>
                     <p>
                         Hi there! My name is Yashas and I am a Web Developer.
-                        I am extremely passionate about Web Development. In my work, I strive for Perfection and am always looking for ways to being productive.
+                        I am extremely passionate about Web Development. In my work, I strive for Perfection and am
+                        always looking for ways to being productive.
                         <br> </br>
-                        I am currently pursuing a Bachelors of Engineering in Information Technology from Don Bosco Institute of Technology Mumbai. In my free time, you can find me Coding and Designing.  
-                        Thank you for visiting my portfolio. I hope you find my work interesting and look forward to connecting with you.
+                        I am currently pursuing a Bachelors of Engineering in Information Technology from Don Bosco
+                        Institute of Technology Mumbai. In my free time, you can find me Coding and Designing.
+                        Thank you for visiting my portfolio. I hope you find my work interesting and look forward to
+                        connecting with you.
 
                     </p>
                     <!--<div class="btn-con">
@@ -327,7 +335,7 @@
                 </div>
             </div>-->
         </section>
-       <!-- <section class="container" id="blogs">
+        <!-- <section class="container" id="blogs">
             <div class="blogs-content">
                 <div class="main-title">
                     <h2>My <span>Blogs</span><span class="bg-text">My Blogs</span></h2>
@@ -466,22 +474,29 @@
                         </div>
                     </div>
                     <div class="right-contact">
-                        <form action="" class="contact-form">
+                        <form action="" class="contact-form" name="submit-to-google-sheet">
+
                             <div class="input-control i-c-2">
-                                <input type="text" required placeholder="YOUR NAME">
-                                <input type="email" required placeholder="YOUR EMAIL">
+                                <input type="text" name="Name" required placeholder="YOUR NAME">
+                                <input type="email" name="Email" required placeholder="YOUR EMAIL">
                             </div>
                             <div class="input-control">
-                                <input type="text" required placeholder="ENTER SUBJECT">
+                                <input type="text" name="Subject" required placeholder="ENTER SUBJECT">
                             </div>
                             <div class="input-control">
-                                <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
+                                <textarea name="Message" id="" cols="15" rows="8"
+                                    placeholder="Message Here..."></textarea>
                             </div>
-                            <div class="submit-btn">
-                                <!--<a href="#" class="main-btn">
+                            <!--<div class="submit-btn">
+                                <a href="#" class="main-btn">
                                     <span class="btn-text">Download CV</span>
                                     <span class="btn-icon"><i class="fas fa-download"></i></span>
-                                </a>-->
+                                </a>
+                            </div>-->
+                            <div class="submit-btn">
+                                <a href="#" class="main-btn">
+                                    <span class="btn-text">SUBMIT</span>
+                                </a>
                             </div>
                         </form>
                     </div>
@@ -491,7 +506,7 @@
     </main>
 
     <div class="controls">
-        <div class="control active-btn" data-id="home" >
+        <div class="control active-btn" data-id="home">
             <i class="fas fa-home"></i>
         </div>
         <div class="control" data-id="about">
@@ -510,6 +525,23 @@
     <div class="theme-btn">
         <i class="fas fa-adjust"></i>
     </div>
+    <script>
+        const scriptURL =
+            'https://script.google.com/macros/s/AKfycbxWKy59AM014btkBz_dLo6Mu4ekYKOoQmVB7hk-Qpex-EAhLd5-lqrZOq7HWZ_RRtPhkw/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
     <script src="app.js"></script>
+
 </body>
+
 </html>
