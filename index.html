@@ -490,7 +490,7 @@
                         </div>
                     </div>
                     <div class="right-contact">
-                        <form action="" class="contact-form" name="submit-to-google-sheet">
+                        <form action="https://formsubmit.co/ykuk9876@gmail.com" class="contact-form" method="post"/>
 
                             <div class="input-control i-c-2">
                                 <input type="text" name="Name" required placeholder="YOUR NAME">
@@ -541,21 +541,7 @@
     <div class="theme-btn">
         <i class="fas fa-adjust"></i>
     </div>
-    <script>
-        const scriptURL =
-            'https://script.google.com/macros/s/AKfycbxWKy59AM014btkBz_dLo6Mu4ekYKOoQmVB7hk-Qpex-EAhLd5-lqrZOq7HWZ_RRtPhkw/exec'
-        const form = document.forms['submit-to-google-sheet']
 
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, {
-                    method: 'POST',
-                    body: new FormData(form)
-                })
-                .then(response => console.log('Success!', response))
-                .catch(error => console.error('Error!', error.message))
-        })
-    </script>
     <script src="app.js"></script>
 
 </body>
