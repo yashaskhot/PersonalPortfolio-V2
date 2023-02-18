@@ -3,4 +3,4 @@
 A Newer Better Version Of my Portfolio Website...
 
 
-Website Link:- https://yashaskhot.github.io/PersonalPortfolio-V2/
+Website Link:- https://yashaskhot.netlify.app/
